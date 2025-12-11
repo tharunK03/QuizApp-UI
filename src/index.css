@@ -4,6 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+ :root {
+  --design-width: 1542;
+  --design-height: 900;
+  --quiz-scale: min(
+    1,
+    calc(0.8 * min(100vw / var(--design-width), (100vh - 48px) / var(--design-height)))
+  );
+}
+
 * {
   box-sizing: border-box;
 }
@@ -53,6 +62,8 @@ body {
   border-radius: 42px;
   box-shadow: 0 20px 60px rgba(24, 75, 90, 0.15);
   border: 1px solid rgba(31, 117, 254, 0.25);
+  transform: scale(var(--quiz-scale));
+  transform-origin: top center;
 }
 
 .quiz-inner {
@@ -177,7 +188,7 @@ body {
 
 .quiz-nav {
   position: absolute;
-  right: clamp(70px, 1vw, 140px);
+  right: clamp(90px, 12vw, 190px);
   left: auto;
   transform: none;
   bottom: 22px;
@@ -374,6 +385,10 @@ body {
   .quiz-inner {
     padding: 48px 36px 70px;
     min-height: 600px;
+  }
+
+  :root {
+    --quiz-scale: 1;
   }
 
   .quiz-nav {
