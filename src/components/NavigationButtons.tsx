@@ -18,48 +18,6 @@ export default function NavigationButtons({
 
   return (
     <div className="navigation-frame">
-      {isFirstQuestion ? (
-        <button
-          disabled
-          className="nav-btn nav-btn--disabled"
-          aria-label="Previous question"
-        >
-          <svg
-            className="nav-icon"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
-      ) : (
-        <button
-          onClick={onPrevious}
-          className="nav-btn nav-btn--back"
-          aria-label="Previous question"
-        >
-          <svg
-            className="nav-icon"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
-      )}
-      
       {isLastQuestion ? (
         <button
           onClick={onNext}
@@ -70,26 +28,70 @@ export default function NavigationButtons({
           Submit
         </button>
       ) : (
-        <button
-          onClick={onNext}
-          disabled={!hasAnswer}
-          className={`nav-btn nav-btn--next ${!hasAnswer ? 'nav-btn--disabled' : ''}`}
-          aria-label="Next question"
-        >
-          <svg
-            className="nav-icon"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        <>
+          {isFirstQuestion ? (
+            <button
+              disabled
+              className="nav-btn nav-btn--disabled"
+              aria-label="Previous question"
+            >
+              <svg
+                className="nav-icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+          ) : (
+            <button
+              onClick={onPrevious}
+              className="nav-btn nav-btn--back"
+              aria-label="Previous question"
+            >
+              <svg
+                className="nav-icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+          )}
+
+          <button
+            onClick={onNext}
+            disabled={!hasAnswer}
+            className={`nav-btn nav-btn--next ${!hasAnswer ? 'nav-btn--disabled' : ''}`}
+            aria-label="Next question"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
+            <svg
+              className="nav-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </>
       )}
     </div>
   );
