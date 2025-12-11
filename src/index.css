@@ -4,13 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
- :root {
-  --design-width: 1542;
-  --design-height: 900;
-  --quiz-scale: min(
-    1,
-    calc(0.8 * min(100vw / var(--design-width), (100vh - 48px) / var(--design-height)))
-  );
+:root {
+  --quiz-scale: 0.8;
 }
 
 * {
@@ -188,7 +183,7 @@ body {
 
 .quiz-nav {
   position: absolute;
-  right: clamp(90px, 12vw, 190px);
+  right: clamp(90px, 8vw, 210px);
   left: auto;
   transform: none;
   bottom: 22px;
@@ -210,8 +205,8 @@ body {
 
 .quiz-badge {
   position: absolute;
-  left: -10px;
-  bottom: 168px;
+  left: -110px;
+  bottom: 170px;
   max-width: 200px;
 }
 
@@ -382,13 +377,13 @@ body {
 }
 
 @media (max-width: 1024px) {
+  :root {
+    --quiz-scale: 1;
+  }
+
   .quiz-inner {
     padding: 48px 36px 70px;
     min-height: 600px;
-  }
-
-  :root {
-    --quiz-scale: 1;
   }
 
   .quiz-nav {
