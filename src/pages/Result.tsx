@@ -24,7 +24,10 @@ export default function Result() {
       >
         <div className="result-pill">Keep Learning!</div>
         <h1 className="result-title">Your Final score is</h1>
-        <div className="result-score">{Math.round(score)}%</div>
+        <div className="result-score-wrap">
+          <div className="result-score">{Math.round(score)}</div>
+          <span className="result-percent">%</span>
+        </div>
         <button className="result-button" onClick={handleStartAgain}>
           Start Again
         </button>
