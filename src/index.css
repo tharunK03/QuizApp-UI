@@ -241,7 +241,6 @@ body {
 }
 
 .nav-btn--back .nav-icon {
-  transform: rotate(180deg);
 }
 
 .nav-btn--disabled {
