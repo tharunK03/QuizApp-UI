@@ -179,7 +179,7 @@ body {
   position: absolute;
   right: clamp(16px, 4vw, 48px);
   left: auto;
-  bottom: 10px;
+  bottom: clamp(8px, 2vh, 14px);
   width: auto;
   height: 50px;
   display: flex;
