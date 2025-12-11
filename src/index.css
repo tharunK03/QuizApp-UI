@@ -177,11 +177,11 @@ body {
 
 .quiz-nav {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 22px;
-  width: min(897px, 100%);
+  width: 116px;
   height: 50px;
+  left: 1292px;
+  top: 855px;
+  transform: none;
   display: flex;
   justify-content: flex-end;
   align-items: center;
