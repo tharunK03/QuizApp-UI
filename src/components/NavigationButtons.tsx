@@ -17,22 +17,15 @@ export default function NavigationButtons({
   const isLastQuestion = currentQuestion === totalQuestions - 1;
 
   return (
-    <div className="flex justify-end gap-3">
+    <div className="navigation-frame">
       {isFirstQuestion ? (
         <button
           disabled
-          className="rounded-lg opacity-50 cursor-not-allowed flex items-center justify-center shadow-sm"
-          style={{
-            width: '45px',
-            height: '45px',
-            backgroundColor: '#E6F5FF',
-            borderRadius: '8px',
-          }}
+          className="nav-btn nav-btn--disabled"
           aria-label="Previous question"
         >
           <svg
-            className="text-gray-400"
-            style={{ width: '24px', height: '24px' }}
+            className="nav-icon"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -48,18 +41,11 @@ export default function NavigationButtons({
       ) : (
         <button
           onClick={onPrevious}
-          className="rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-105 shadow-sm"
-          style={{
-            width: '45px',
-            height: '45px',
-            backgroundColor: '#E6F5FF',
-            borderRadius: '8px',
-          }}
+          className="nav-btn nav-btn--back"
           aria-label="Previous question"
         >
           <svg
-            className="text-gray-700"
-            style={{ width: '24px', height: '24px' }}
+            className="nav-icon"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -78,18 +64,7 @@ export default function NavigationButtons({
         <button
           onClick={onNext}
           disabled={!hasAnswer}
-          className={`rounded-xl flex items-center justify-center transition-all duration-200 shadow-sm font-semibold ${
-            hasAnswer
-              ? 'bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 hover:scale-105 text-deep-teal'
-              : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-          }`}
-          style={{
-            paddingLeft: 'clamp(20px, 2.1vw, 32px)',
-            paddingRight: 'clamp(20px, 2.1vw, 32px)',
-            paddingTop: 'clamp(10px, 1.2vh, 12px)',
-            paddingBottom: 'clamp(10px, 1.2vh, 12px)',
-            fontSize: 'clamp(14px, 1vw, 16px)',
-          }}
+          className={`nav-btn nav-btn--submit ${!hasAnswer ? 'nav-btn--disabled' : ''}`}
           aria-label="Submit quiz"
         >
           Submit
@@ -98,20 +73,11 @@ export default function NavigationButtons({
         <button
           onClick={onNext}
           disabled={!hasAnswer}
-          className={`rounded-lg flex items-center justify-center transition-all duration-200 shadow-sm ${
-            !hasAnswer ? 'cursor-not-allowed opacity-50' : 'hover:scale-105'
-          }`}
-          style={{
-            width: '45px',
-            height: '45px',
-            backgroundColor: '#E6F5FF',
-            borderRadius: '8px',
-            color: hasAnswer ? '#15313D' : '#9CA3AF',
-          }}
+          className={`nav-btn nav-btn--next ${!hasAnswer ? 'nav-btn--disabled' : ''}`}
           aria-label="Next question"
         >
           <svg
-            style={{ width: '24px', height: '24px' }}
+            className="nav-icon"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -128,4 +94,3 @@ export default function NavigationButtons({
     </div>
   );
 }
-
