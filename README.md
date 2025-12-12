@@ -1,6 +1,28 @@
 # Quiz Application
 
-A beautiful, pixel-perfect quiz application built with React, TypeScript, and TailwindCSS.
+A beautiful, pixel-perfect quiz application built with React, TypeScript, Vite, and TailwindCSS. This README explains how the project works end to end and includes sample visuals of the experience.
+
+**Live Demo**: https://quiz-app-ui-pi.vercel.app/
+
+## How the Quiz Works
+
+- **Data**: Questions live in `src/data/questions.ts` as an array of `{ id, question, options, correctAnswer }`.
+- **Flow**: `Quiz.tsx` loads questions, tracks answers in state, and drives navigation. When the final question is submitted, it calculates your score and routes to `Result.tsx`.
+- **UI**: Layout and animation are composed with small, focused components:
+  - `ProgressBar` shows completion
+  - `QuestionCard` renders the prompt
+  - `AnswerOption` handles selection styles and clicks
+  - `NavigationButtons` moves between steps and guards “Next” until an option is chosen
+- **Scoring**: Correct answers are counted, converted to a percentage, and animated on the results screen using an ease-out counter.
+- **Styling**: Tailwind powers the gradients, spacing, and responsive rules; custom tweaks live in `src/index.css` and `tailwind.config.js`.
+
+## Sample Screens
+
+The repo already includes assets used in the UI. These preview how the quiz looks out of the box.
+
+![Quiz welcome badge](src/assets/bestofluck.png)
+
+![Playful paw overlay](src/assets/catpalm.gif)
 
 ## Features
 
@@ -8,7 +30,7 @@ A beautiful, pixel-perfect quiz application built with React, TypeScript, and Ta
 - 📊 Multi-step progress bar
 - 🎯 Multiple choice questions with interactive answer selection
 - ➡️ Previous/Next navigation between questions
-- 📈 Score calculation and result screen
+- 📈 Score calculation and animated result screen
 - 🔄 Restart quiz functionality
 - 🎨 Smooth animations and transitions
 - 📱 Responsive design
@@ -20,43 +42,51 @@ A beautiful, pixel-perfect quiz application built with React, TypeScript, and Ta
 - Node.js (v16 or higher)
 - npm or yarn
 
-### Installation
+### Installation and Run
 
-1. Install dependencies:
+1) Install dependencies:
 ```bash
 npm install
 ```
 
-2. Start the development server:
+2) Start the development server:
 ```bash
 npm run dev
 ```
 
-3. Open your browser and navigate to `http://localhost:5173`
+3) Open your browser at `http://localhost:5173`.
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The optimized build lives in `dist/`.
 
 ## Project Structure
 
 ```
 src/
   components/
-    ProgressBar.tsx      # Progress indicator component
-    QuestionCard.tsx     # Question display component
-    AnswerOption.tsx     # Individual answer option component
+    ProgressBar.tsx       # Progress indicator component
+    QuestionCard.tsx      # Question display component
+    AnswerOption.tsx      # Individual answer option component
     NavigationButtons.tsx # Previous/Next navigation
   pages/
-    Quiz.tsx            # Main quiz page
-    Result.tsx          # Results page
+    Quiz.tsx              # Main quiz page
+    Result.tsx            # Results page
   data/
-    questions.ts        # Quiz questions data
-  App.tsx              # Main app component with routing
-  main.tsx             # Entry point
+    questions.ts          # Quiz questions data
+  App.tsx                 # Main app component with routing
+  main.tsx                # Entry point
 ```
 
 ## Customization
 
-### Adding Questions
+### Adding or Editing Questions
 
-Edit `src/data/questions.ts` to add or modify quiz questions:
+Update `src/data/questions.ts`:
 
 ```typescript
 {
@@ -69,17 +99,8 @@ Edit `src/data/questions.ts` to add or modify quiz questions:
 
 ### Styling
 
-All styles use TailwindCSS. Custom colors and fonts are defined in `tailwind.config.js`.
-
-## Build for Production
-
-```bash
-npm run build
-```
-
-The production build will be in the `dist` folder.
+Tailwind handles most styling. Adjust theme tokens in `tailwind.config.js` and add global tweaks in `src/index.css`.
 
 ## License
 
 MIT
-
