@@ -20,6 +20,12 @@ A beautiful, pixel-perfect quiz application built with React, TypeScript, Vite, 
 
 The repo already includes assets used in the UI. These preview how the quiz looks out of the box.
 
+![Quiz page](src/assets/screens/firstpage.png)
+
+![Final submission](src/assets/screens/finalpage.png)
+
+![Result page](src/assets/screens/result.png)
+
 ![Quiz welcome badge](src/assets/bestofluck.png)
 
 ![Playful paw overlay](src/assets/catpalm.gif)
