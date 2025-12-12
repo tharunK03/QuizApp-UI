@@ -26,10 +26,6 @@ The repo already includes assets used in the UI. These preview how the quiz look
 
 ![Result page](src/assets/screens/result.png)
 
-![Quiz welcome badge](src/assets/bestofluck.png)
-
-![Playful paw overlay](src/assets/catpalm.gif)
-
 ## Features
 
 - ✨ Modern, clean UI with soft blue gradients
